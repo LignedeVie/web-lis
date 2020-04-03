@@ -1,0 +1,15 @@
+{
+  "exclude": [
+    "public",
+    "tests",
+    "dist",
+    "docs"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src/*"],
+      "@/*": ["src/*"]
+    }
+  }
+}

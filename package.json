@@ -1,0 +1,138 @@
+{
+  "name": "@labresultorg/web-lis",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve:dist": "servor dist index.html 7601",
+    "serve": "node --max_old_space_size=8000 ./node_modules/@vue/cli-service/bin/vue-cli-service.js serve",
+    "build": "node --max_old_space_size=4000 ./node_modules/@vue/cli-service/bin/vue-cli-service.js build",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e",
+    "lint": "standardx --fix"
+  },
+  "dependencies": {
+    "@chenfengyuan/vue-qrcode": "^1.0.0",
+    "@mdi/font": "^2.6.95",
+    "@mycure/mf-auth": "^5.32.0",
+    "@mycure/mf-commons": "^5.32.0",
+    "@mycure/mf-organizations": "^5.32.0",
+    "@mycure/sdk": "^5.7.6",
+    "@mycure/sdk-js": "^5.32.2",
+    "@mycure/vue-plugins": "^0.6.27",
+    "@mycure/vue-wysiwyg": "^1.3.0",
+    "@labresultorg/web-plugins": "^0.1.0",
+    "core-js": "^3.6.4",
+    "date-fns": "^1.30.1",
+    "debug": "^4.1.1",
+    "firebase": "^7.9.3",
+    "lodash": "^4.17.15",
+    "portal-vue": "^2.1.7",
+    "register-service-worker": "^1.5.2",
+    "socket.io-client": "^2.3.0",
+    "v-viewer": "^1.5.1",
+    "viewerjs": "^1.5.0",
+    "vue": "^2.6.11",
+    "vue-fragment": "^1.5.1",
+    "vue-morphling": "^0.8.8",
+    "vue-router": "^3.1.5",
+    "vue-tour": "^1.2.0",
+    "vue-wysiwyg": "^1.7.2",
+    "vuetify": "^1.5.16",
+    "vuex": "^3.1.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@vue/cli-plugin-babel": "^4.1.2",
+    "@vue/cli-plugin-e2e-cypress": "^4.1.2",
+    "@vue/cli-plugin-pwa": "^4.1.2",
+    "@vue/cli-plugin-unit-jest": "^4.1.2",
+    "@vue/cli-service": "^4.1.2",
+    "@vue/test-utils": "^1.0.0-beta.30",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-component": "^1.1.1",
+    "eslint-plugin-cypress": "^2.8.1",
+    "eslint-plugin-jest": "^23.6.0",
+    "eslint-plugin-vue": "^6.1.2",
+    "lint-staged": "^9.5.0",
+    "node-sass": "^4.13.0",
+    "pug": "^2.0.3",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^8.0.2",
+    "servor": "^3.0.8",
+    "standardx": "^5.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "vue-cli-plugin-vuetify": "^0.4.6",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.4.3",
+    "yorkie": "^2.0.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "parser": "babel-eslint",
+      "sourceType": "module"
+    },
+    "plugins": [
+      "vue",
+      "jest",
+      "cypress"
+    ],
+    "extends": [
+      "plugin:vue/recommended",
+      "plugin:jest/recommended",
+      "plugin:cypress/recommended"
+    ],
+    "env": {
+      "jest/globals": true,
+      "cypress/globals": true
+    },
+    "rules": {
+      "semi": [
+        2,
+        "always"
+      ],
+      "no-extra-semi": 2,
+      "comma-dangle": [
+        "error",
+        "always-multiline"
+      ],
+      "no-void": 0
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -E GIT_PARAMS"
+  },
+  "lint-staged": {
+    "*.js": [
+      "standardx --fix",
+      "git add"
+    ],
+    "*.vue": [
+      "standardx --fix",
+      "git add"
+    ]
+  },
+  "jest": {
+    "preset": "@vue/cli-plugin-unit-jest",
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/(?!vuetify)"
+    ]
+  }
+}
