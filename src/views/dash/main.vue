@@ -138,6 +138,10 @@
             v-list-tile-action(v-if="nav.icon")
               v-icon {{nav.icon}}
 
+        //- settings route
+        v-list-tile(:to="settingsRoute")
+          v-list-tile-title.subnav-indent.left-nav-tile-title Settings
+
     //- CONTENT
     v-content
       router-view
